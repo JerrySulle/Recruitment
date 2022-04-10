@@ -73,10 +73,10 @@ $input2 = [
     "price" => 40000,
     "pecahan" => [
         [
-            "value" => 20000
+            "value" => 30000
         ],
         [
-            "value" => 20000
+            "value" => 10000
         ]
     ]
 ];
@@ -128,6 +128,10 @@ function inputted($value,$pecah,$input){
     $total = 0;
     $pecahan_input = [];
     foreach ($pecah as $item) {
+        if(!($item["value"] == 1000 || $item["value"] == 5000 || $item["value"] == 10000 || $item["value"] == 20000 || $item["value"] == 50000 || $item["value"] == 100000)){
+            print_r("\nTidak ada pecahan dengan nominal " . $item["value"] . "\n");
+            return 0;
+        }
         $pecahan_input[] = new PecahanInput(
             $item["value"]
         );
