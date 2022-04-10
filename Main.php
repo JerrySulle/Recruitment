@@ -117,6 +117,7 @@ function cariPecahan($input,$key){
     }
     for($i = 0; $i < count($pecahan_input); $i++){
         if($pecahan_input[$i]->getValue() == $key) {
+            $pecahan_input[$i]->setValue(0);
             return true;
         }
     }
@@ -238,6 +239,7 @@ printall($input);
 inputted($input2['price'],$input2['pecahan'],$input);
 print_r("\nSETELAH INPUT2 DIMASUKKAN\n");
 printall($input);
+
 inputted($input3['price'],$input3['pecahan'],$input);
 print_r("\nSETELAH SEMUA INPUT DIJALANKAN\n");
 
